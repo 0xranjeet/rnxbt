@@ -1,0 +1,23 @@
+{
+  "name": "file-upload",
+  "version": "1.0.0",
+  "description": "Simple Pinata-backed file upload and share app",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "pinata",
+    "upload",
+    "share"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.7.0",
+    "multer": "^2.1.1"
+  }
+}

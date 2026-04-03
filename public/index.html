@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload & Share</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <h1>Decentrazile Storage</h1>
+        <p class="subtext">
+          Upload only `.csv`/`.scv` and text files to Pinata and get instant share, open and download links
+        </p>
+        <p class="subtext">
+          Large files upload directly to Pinata, so deployed Vercel limits do not block 100MB+ files anymore.
+        </p>
+      </section>
+
+      <section class="card">
+        <form id="uploadForm" class="upload-form">
+          <label class="dropzone" for="fileInput" id="dropzone">
+            <input id="fileInput" name="file" type="file" accept=".csv,.scv,.txt,.md,.log,text/plain,text/csv" required />
+            <span class="dropzone-title">Choose file or drag and drop</span>
+            <span class="dropzone-hint">Only CSV/SCV and text files. Direct uploads support large files, including 100MB+.</span>
+            <span class="file-name" id="fileName">No file selected</span>
+          </label>
+
+          <button id="uploadButton" class="primary-button" type="submit">Upload Now</button>
+        </form>
+
+        <div class="status" id="status">Ready to upload</div>
+
+        <section class="result hidden" id="resultCard">
+          <div class="result-top">
+            <div>
+              <p class="result-label">Uploaded file</p>
+              <h2 id="resultName">-</h2>
+            </div>
+            <span class="pill" id="resultType">-</span>
+          </div>
+
+          <div class="rename-row">
+            <label class="rename-field" for="renameInput">
+              <span>Change file name</span>
+              <input id="renameInput" type="text" placeholder="Enter a new file name" />
+            </label>
+            <button id="renameButton" class="secondary-button" type="button">Update Name</button>
+          </div>
+
+          <div class="link-grid">
+            <label>
+              <span>Short link</span>
+              <div class="copy-row">
+                <input id="shortLink" readonly />
+                <button type="button" data-copy="shortLink">Copy</button>
+              </div>
+            </label>
+
+            <label>
+              <span>Open link</span>
+              <div class="copy-row">
+                <input id="pageLink" readonly />
+                <button type="button" data-copy="pageLink">Copy</button>
+              </div>
+            </label>
+
+            <label>
+              <span>Direct link</span>
+              <div class="copy-row">
+                <input id="imageLink" readonly />
+                <button type="button" data-copy="imageLink">Copy</button>
+              </div>
+            </label>
+
+            <label>
+              <span>Download link</span>
+              <div class="copy-row">
+                <input id="downloadLink" readonly />
+                <button type="button" data-copy="downloadLink">Copy</button>
+              </div>
+            </label>
+          </div>
+
+          <div class="action-row">
+            <a id="openLinkButton" class="secondary-button" href="#" target="_blank" rel="noreferrer">
+              Open File
+            </a>
+            <a id="downloadLinkButton" class="primary-button" href="#" target="_blank" rel="noreferrer">
+              Download
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer-note">
+        Built by
+        <a href="https://x.com/0xranjeet" target="_blank" rel="noreferrer">ranjeet</a>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tus-js-client@4/dist/tus.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
