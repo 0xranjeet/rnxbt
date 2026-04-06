@@ -601,7 +601,7 @@ app.get("/admin", (req, res) => {
     <title>decentrazile storage</title>
   </head>
   <body style="font-family: Arial, sans-serif; padding: 24px;">
-    <p>ADMIN_ACCESS_KEY is missing. Add it to your environment variables.</p>
+    <p>ADMIN_ACCESS_KEY is missing.</p>
   </body>
 </html>`);
   }
