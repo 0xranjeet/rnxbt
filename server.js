@@ -1449,7 +1449,7 @@ app.post("/api/upload-url", async (req, res) => {
 
   if (!isAllowedUpload(originalName, contentType)) {
     return res.status(400).json({
-      error: "Only CSV and text files are allowed.",
+      error: "CSV and text files are allowed.",
     });
   }
 
